@@ -1,24 +1,50 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.js'
+
+import Menunav from './components/menu/header';
+import Maincontain from './components/contain/mainContain';
+import Login from './components/login/login';
+import Usuarioregistro from './components/login/usernew/loginUsuario';
+import Mecanicoregistro from './components/login/mecanico/loginMecanico';
+import Nosotros from './components/componentsMenu/nosotros/nosotros';
+import Privacidad from './components/componentsMenu/privacidad/privacidad';
+import Calidad from './components/componentsMenu/calidad/calidad';
+
 import './App.css';
+import Listamecanicos from './components/listMechanic/listamecanicos';
+import Mylocation from './components/map/location';
+import Mechanictaller from './components/locationBusiness/bMechanic';
+import Notfound from './components/errors/404';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Menunav />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        
+        <Route path='/nosotros' element={<Nosotros />} />
+        <Route path='/privacidad' element={<Privacidad />} />
+        <Route path='/calidad' element={<Calidad />} />
+        <Route path='/usuario' element={<Usuarioregistro />} />
+        <Route path='/mecanico' element={<Mecanicoregistro />} />
+        <Route path='/Listamecanicos' element={<Listamecanicos />}></Route>
+        <Route path='/map' element={<Mylocation />}></Route>
+        <Route path='/direccionTaller' element={<Mechanictaller />}></Route>
+        <Route path='*' element={<Notfound/>}></Route>
+      </Routes>
+    </Router>
+  );
+}
+
+function Home() {
+  return (
+    <>
+      <Maincontain />
+    </>
   );
 }
 

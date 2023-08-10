@@ -1,0 +1,26 @@
+#map {
+  width: auto;
+  height: 680px;
+}
+
+.iconcss{
+  border-radius: 30px;
+  animation: expand 1s infinite;
+}
+
+@keyframes expand {
+  to{
+    background: blue;
+    width: 10px;
+    height: 10px;
+  }from{
+    width: 0;
+    height: 0;
+    background: red;
+  }
+}
+
+.iconwork{
+  border-radius: 30px;
+  background: red;
+}

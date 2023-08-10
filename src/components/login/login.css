@@ -1,0 +1,9 @@
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.bor{
+    border: 2px solid blue;
+    padding: 20px;
+}

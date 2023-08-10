@@ -1,0 +1,23 @@
+section{
+    background: #282C31;
+    overflow-x: hidden;
+}
+
+.imgTaller{
+    display: flex;
+    justify-content: center;
+    background: #0B232D;
+    filter: blur(2px);
+}
+
+img{
+    height: 90vh;
+    user-select: none;
+}
+
+.description{
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 38%;
+}

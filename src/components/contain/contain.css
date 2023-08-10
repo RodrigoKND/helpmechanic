@@ -1,0 +1,52 @@
+.titleApp {
+    user-select: none;
+    --webkit-user-select: none;
+    font-size: 50px;
+}
+
+.itemsHome{
+    border-radius: 20px;
+    position: absolute; 
+    z-index: 2;
+    right: 35%; 
+    top: 40%;
+}
+
+.preoverview{
+    font-size: 20px;
+}
+
+@media (max-width:800px){
+    /* .itemsHome{
+        top: 250px;
+    }*/
+    .titleApp{
+        font-size: 30px;
+    } 
+    .itemsHome .titleApp{
+        margin-left: 4%;
+    }
+    .preoverview{
+        font-size: 9.5px;
+        background: red;
+    }
+}
+
+@media (max-width:280px){
+    .titleApp{
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width:540px){
+    .titleApp{
+        font-size: 30px;
+    }
+}
+
+@media (min-width:820px){
+    .titleApp{
+        font-size: 50px;
+    } 
+}
