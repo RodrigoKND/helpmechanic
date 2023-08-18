@@ -9,8 +9,8 @@ export default function Inputformusuario() {
     const [valid, setValid] = useState('');
     const sendBtn = useRef();
     useEffect(() => {
-        const urlGET = 'http://localhost:3001/mecanico';
-        fetch(urlGET, { method: 'GET' })
+        const urlGET = 'https://hm-server-provider.onrender.com/mecanico';
+        fetch(urlGET, { method: 'GET', cache: 'no-store', })
             .then(resp => resp.json())
             .then(data => setValid(data.token))
             .catch(err => console.error('Error'))

@@ -11,9 +11,10 @@ export default function Mylocation() {
     const [register, setRegister] = useState(false);
 
     useEffect(() => {
-        const urlGET = 'http://localhost:3001/map'
+        const urlGET = 'https://hm-server-provider.onrender.com/map'
         fetch(urlGET, {
             method: 'GET',
+            cache: 'no-store',
             credentials: 'include'
         })
         .then(resp => resp.json())

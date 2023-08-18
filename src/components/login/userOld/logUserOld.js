@@ -5,13 +5,13 @@ export default function Loguserold() {
     const [fields, handleChange] = FieldsInto();
     const [message, setMessage] = useState('');
     const [valid, setValid] = useState('');
-    
-    useEffect(()=>{
-        fetch('http://localhost:3001/login', {method:'GET'})
-        .then(resp=>resp.json())
-        .then(data=>setValid(data.token))
-        .catch(err=>console.error('Error'))
-    },[])
+
+    useEffect(() => {
+        fetch('https://hm-server-provider.onrender.com/login', { method: 'GET', cache: 'no-store', })
+            .then(resp => resp.json())
+            .then(data => setValid(data.token))
+            .catch(err => console.error('Error'))
+    }, [])
 
     const formData = new FormData();
     formData.append('uEmail', fields.email);
@@ -44,10 +44,10 @@ export default function Loguserold() {
                 <div className="mt-4">
                     <h6 className="mt-1 text-center text-danger">{message}</h6>
                     <label>Correo</label>
-                    <input type='email' className='form-control mt-3 mb-2' 
+                    <input type='email' className='form-control mt-3 mb-2'
                         name="email" value={fields.email} onChange={handleChange} autoComplete="off"></input>
                     <label>Contraseña</label>
-                    <input type='password' className='form-control mt-3 mb-2' 
+                    <input type='password' className='form-control mt-3 mb-2'
                         name="passwd" value={fields.passwd} onChange={handleChange} autoComplete="off"
                     ></input>
                     <input type='hidden' name='prot' value={valid}></input>

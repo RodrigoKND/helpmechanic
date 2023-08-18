@@ -3,16 +3,15 @@ import '../../../fonts.css'
 
 export default function Calidad() {
     return (
-        <main className='container' style={{ marginTop: '80px', lineHeight:'30px' }}>
+        <div className='container' style={{ marginTop: '80px', lineHeight:'30px' }}>
             <hr className='bg-primary' style={{ height: '10px' }}></hr>
             <header>
-                <h3 className>Encuentra tu Mecánico de Confianza</h3>
+                <h3>Encuentra tu Mecánico de Confianza</h3>
                 <b>------ Servicio profesional de mecánicos cerca de ti</b>
             </header>
-            <section className="how-it-works textContain mt-3" style={{ background: 'none' }}>
+            <section className='textContain mt-3' style={{ background: 'none' }}>
                 <h4>¿Cómo funciona?</h4>
                 <div>
-                    {/* <img src="step1.png" alt="Paso 1"> */}
                     <p>
                         Solo registrate gratuitamente para obtener una lista de mecánicos
                         según tu ubicación.
@@ -20,12 +19,11 @@ export default function Calidad() {
                 </div>
 
                 <div>
-                    {/* <img src="..." alt="Paso 3"> */}
                     <p>Recibe opciones de mecánicos expertos y elige el que mejor se adapte a tus necesidades.</p>
                 </div>
             </section>
 
-            <section className="why-choose-us textContain" style={{ background: 'none' }}>
+            <section className='textContain' style={{ background: 'none' }}>
                 <h4>¿Por Qué Elegirnos?</h4>
                 <ul>
                     <li>Red de mecánicos altamente calificados y certificados.</li>
@@ -33,7 +31,7 @@ export default function Calidad() {
                 </ul>
             </section>
 
-            <section className="why-choose-us textContain" style={{ background: 'none' }}>
+            <section className='textContain' style={{ background: 'none' }}>
                 <h4>Calificación</h4>
                 <div>
                     <p>
@@ -43,7 +41,7 @@ export default function Calidad() {
                     </p>
                 </div>
             </section>
-            <section className="why-choose-us textContain" style={{ background: 'none' }}>
+            <section className='textContain' style={{ background: 'none' }}>
                 <h4>Necesidad que se cubre</h4>
                 <div>
                     <p>
@@ -60,7 +58,7 @@ export default function Calidad() {
                 </div>
             </section>
             <div className='d-flex justify-content-center'>
-                <label className=' text-center bg-primary p-3 text-white'>
+                <label className='text-center bg-primary p-3 text-white'>
                     Desde el tallaer hasta tu ubicación
                 </label>
             </div>
@@ -68,6 +66,6 @@ export default function Calidad() {
                 <span className='p-4'> © HELPMECHANIC 2023 </span>
             </section>
 
-        </main>
+        </div>
     );
 }

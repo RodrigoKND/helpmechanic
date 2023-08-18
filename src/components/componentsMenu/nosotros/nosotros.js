@@ -8,16 +8,17 @@ import './nosotros.css'
 export default function Nosotros() {
     const [register, setRegister] = useState(false);
     useEffect(() => {
-        const urlGET = 'http://localhost:3001/nosotros'
+        const urlGET = 'https://hm-server-provider.onrender.com/nosotros'
         fetch(urlGET, {
             method: 'GET',
+            cache: 'no-store',
             credentials: 'include'
         })
             .then(resp => resp.json())
             .then(data => {
                 if (data.errorToken) setRegister(true)
             })
-            .catch(err=>console.error('Error'))
+            .catch(err => console.error('Error'))
     }, []);
     const moveImage = event => event.preventDefault();
     return (

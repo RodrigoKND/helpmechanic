@@ -8,11 +8,11 @@ export default function Usuarioregistro() {
     const [value, checkBox] = useCheckBox();
     const [message, setMessage] = useState('');
     const [valid, setValid] = useState('');
-    useEffect(()=>{
-        fetch('http://localhost:3001/login', {method:'GET'})
-        .then(resp=>resp.json())
-        .then(data=>setValid(data.token))
-    },[])   
+    useEffect(() => {
+        fetch('https://hm-server-provider.onrender.com/login', { method: 'GET', cache: 'no-store', })
+            .then(resp => resp.json())
+            .then(data => setValid(data.token))
+    }, [])
 
     const formData = new FormData();
     formData.append('uName', fields.name);
@@ -28,7 +28,7 @@ export default function Usuarioregistro() {
         fetch(url, {
             method: 'POST',
             body: formData,
-            credentials:'include'
+            credentials: 'include'
         })
             .then(resp => resp.json())
             .then(data => {

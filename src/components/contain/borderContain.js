@@ -5,9 +5,10 @@ import './contain.css'
 export default function Bordercontain() {
     const [register, setRegister] = useState(false);
     useEffect(() => {
-        const urlGET = 'http://localhost:3001/'
+        const urlGET = 'https://hm-server-provider.onrender.com/'
         fetch(urlGET, {
             method: 'GET',
+            cache: 'no-store',
             credentials: 'include'
         })
             .then(resp => resp.json())

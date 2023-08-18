@@ -11,8 +11,9 @@ export default function Listamecanicos() {
     const [locationUser, setCoordUser] = useState('');
     const [register, setregister] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:3001/Listamecanicos', {
+        fetch('https://hm-server-provider.onrender.com/Listamecanicos', {
             method: 'GET',
+            cache: 'no-store',
             credentials: 'include'
         })
             .then(res => res.json())

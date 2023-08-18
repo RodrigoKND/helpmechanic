@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 export default function Mechanictaller() {
     const [register, setRegister] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:3001/direccionTaller', {
+        fetch('https://hm-server-provider.onrender.com/direccionTaller', {
             method: 'GET',
+            cache: 'no-store',
             credentials: 'include'
         })
             .then(resp => resp.json())
