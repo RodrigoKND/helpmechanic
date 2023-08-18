@@ -11,6 +11,7 @@ export default function Mechanictaller() {
         })
             .then(resp => resp.json())
             .then(data => {
+                console.log(data)
                 if (data.errorToken) {
                     setRegister(true);
                 }
