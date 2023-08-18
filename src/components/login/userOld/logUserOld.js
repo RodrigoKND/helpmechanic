@@ -20,7 +20,7 @@ export default function Loguserold() {
 
     const sendAuth = (evt) => {
         evt.preventDefault();
-        const url = 'http://localhost:3001/authuser';
+        const url = 'https://hm-server-provider.onrender.com/authuser';
         fetch(url, {
             method: 'POST',
             body: formData

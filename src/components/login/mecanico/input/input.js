@@ -32,7 +32,7 @@ export default function Inputformusuario() {
         formData.append('token', valid);
         formData.append('terms', fields.terms);
 
-        fetch('http://localhost:3001/registerMechanic', {
+        fetch('https://hm-server-provider.onrender.com/registerMechanic', {
             method: 'POST',
             body: formData,
             credentials: 'include'

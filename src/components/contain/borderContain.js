@@ -18,7 +18,7 @@ export default function Bordercontain() {
 
     const closeSession = (evt) => {
         evt.preventDefault();
-        const postSession = 'http://localhost:3001/sessionClose';
+        const postSession = 'https://hm-server-provider.onrender.com/sessionClose';
         fetch(postSession, {
             method: 'POST',
             headers: {

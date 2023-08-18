@@ -24,7 +24,7 @@ export default function Usuarioregistro() {
 
     const sendUser = (evt) => {
         evt.preventDefault();
-        const url = 'http://localhost:3001/newUser'
+        const url = 'https://hm-server-provider.onrender.com/newUser'
         fetch(url, {
             method: 'POST',
             body: formData,

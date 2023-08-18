@@ -38,7 +38,7 @@ export default function Mechanictaller() {
     }
     const submitLocation = (evt) => {
         evt.preventDefault();
-        const urlLocation = 'http://localhost:3001/moreInfoMechanic';
+        const urlLocation = 'https://hm-server-provider.onrender.com/moreInfoMechanic';
         const formData = new FormData();
         formData.append('phone', coord.phone);
         formData.append('email', coord.email);
