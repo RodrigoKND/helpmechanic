@@ -28,7 +28,7 @@ export default function Loguserold() {
             .then(resp => resp.json())
             .then(data => {
                 if (data.ok) {
-                    window.location.href = '/Listamecanicos'
+                    window.location.href = '/#/Listamecanicos'
                 } else {
                     setMessage(data.message)
                 }

@@ -41,7 +41,7 @@ export default function Inputformusuario() {
             .then(data => {
                 if (data.hex) {
                     localStorage.setItem('rvpru', data.hex);
-                    window.location.href = '/direccionTaller';
+                    window.location.href = '/#/direccionTaller';
                 }
                 else {
                     setMessage(data.message)

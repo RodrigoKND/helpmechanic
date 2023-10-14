@@ -34,7 +34,7 @@ export default function Usuarioregistro() {
             .then(data => {
                 console.log(data)
                 if (data.ok === 'correct') {
-                    window.location.href = '/Listamecanicos'
+                    window.location.href = '/#/Listamecanicos'
                 } else setMessage(data.message)
             })
             .catch(() => console.error('Error'))
