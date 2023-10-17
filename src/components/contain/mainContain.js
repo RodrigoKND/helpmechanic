@@ -26,7 +26,7 @@ export default function Maincontain() {
 
             <Bordercontain />
             <div className='contain' style={{ marginTop: '5vh' }} onContextMenu={evt=>evt.preventDefault()}>
-                <img className='imgMechanic' src='/homeImage.jpg' onDragStart={e=>e.preventDefault()} 
+                <img className='imgMechanic' src='/homeimage.jpg' onDragStart={e=>e.preventDefault()} 
                     alt='modelo pagina principal mecanico'/>
                 <div className='row cols-md-4 g-1 mt-4'>
                     <div className='col-4'>
