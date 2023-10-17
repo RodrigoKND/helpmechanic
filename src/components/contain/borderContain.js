@@ -38,7 +38,7 @@ export default function Bordercontain() {
     return (
         <div className='mt-5 itemsHome'>
             <div className="d-flex justify-content-center">
-                <h4 className='title text-center p-3 titleApp text-white'
+                <h4 className='title text-center p-3 titleApp text-primary bg-white' style={{borderRadius:'20px'}}
                     onContextMenu={evt => evt.preventDefault()}>
                     HELPMECHANIC
                 </h4>

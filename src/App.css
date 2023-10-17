@@ -23,6 +23,7 @@
   border-bottom: 10px solid blue;
   height: 86.7vh;
   width: 100%;
+  object-fit:cover;
 }
 
 

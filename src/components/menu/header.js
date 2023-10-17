@@ -7,9 +7,10 @@ import './header.css';
 function Menunav() {
     return (
         <header>
-            <nav className='navbar navbar-expand-lg'>
+            <nav className='navbar'>
                 <div>
-                    <div className='container-fluid bg-body-tertiary' style={{ position: 'fixed', zIndex: '1000', width: '100%', top: '0' }}>
+                    <div className='container-fluid' 
+                    style={{ position: 'fixed', zIndex: '1000', top: '0', background:'yellow' }}>
                         <button className='navbar-toggler mt-4 mb-4' type='button' data-bs-toggle='collapse'
                             data-bs-target='#navbarNav' aria-controls='navbarNav'
                             aria-expanded='false' aria-label='Toggle navigation'>
