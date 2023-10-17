@@ -45,7 +45,7 @@ export default function Bordercontain() {
             </div>
             <div className='d-flex justify-content-center' onContextMenu={evt => evt.preventDefault()}>
                 {register ?
-                    <Link className='nav-link buttonLogin textContain fs-4' to='/login'>
+                    <Link className='nav-link buttonLogin textContain fs-4 bg-danger' to='/login'>
                         Registrarse
                     </Link>
                     :
