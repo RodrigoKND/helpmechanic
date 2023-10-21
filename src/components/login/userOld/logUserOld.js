@@ -27,6 +27,7 @@ export default function Loguserold() {
         })
             .then(resp => resp.json())
             .then(data => {
+                console.log(data)
                 if (data.ok) {
                     window.location.href = '/#/Listamecanicos'
                 } else {

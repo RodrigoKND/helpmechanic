@@ -17,8 +17,7 @@ export default function Login() {
 
     return (
         <>
-            <hr className='bg-primary' style={{ height: '5px' }}></hr>
-            <div className='title fs-3 mb-4 text-center'>FormHelpmechanic</div>
+            <div className='title fs-3 mb-4 text-center' style={{marginTop:'15vh'}}>FormHelpmechanic</div>
             <div className='d-flex justify-content-center '>
                 <div className="bor" style={{ width: '30rem' }}>
                     <div className='mt-2'>

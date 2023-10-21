@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/logoBusiness';
 import '../../App.css';
 import '../../fonts.css';
 import './header.css';
@@ -7,7 +6,7 @@ import './header.css';
 function Menunav() {
     return (
         <header>
-            <nav className='navbar'>
+            <nav className='navbar navbar-dark bg-dark fixed-top'>
                 <div>
                     <div className='container-fluid bg-primary' 
                     style={{ position: 'fixed', zIndex: '1000', top: '0'}}>
@@ -17,17 +16,21 @@ function Menunav() {
                             <span className='navbar-toggler-icon'></span>
                         </button>
                         <div className='collapse navbar-collapse' id='navbarNav'>
-                            <Logo width={100} height={60} />
                             <ul className='navbar-nav menu container title'>
-                                <li className='nav-item  mt-4 me-3'>
-                                    <Link className='nav-link active text-white p-2 bg-primary border border-0' aria-current='page'
+                                <li className='nav-item me-3'>
+                                    <Link className='nav-link active text-white p-2 border border-white' aria-current='page'
                                         to='/nosotros'>
                                         Nosotros
                                     </Link>
                                 </li>
                                 <li className='nav-item  mt-4 me-3 mb-4'>
-                                    <Link className='nav-link active border p-2 border border-0' to='/calidad'>
+                                    <Link className='nav-link active border p-2 border border-0 text-white' to='/calidad'>
                                         Calidad
+                                    </Link>
+                                </li>
+                                <li className='nav-item me-3 mb-4'>
+                                    <Link className='nav-link active border p-2 border border-0 text-white' to='/'>
+                                        Home
                                     </Link>
                                 </li>
                             </ul>

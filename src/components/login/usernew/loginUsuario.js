@@ -46,13 +46,13 @@ export default function Usuarioregistro() {
                 <h4 className='text-center text-danger'>{message}</h4>
                 <label className='mt-2'>Nombre</label>
                 <input type='text' className='form-control mt-3 mb-2' onChange={handleChange}
-                    name='name' value={fields.name}></input>
+                    name='name' value={fields.name} autoComplete='off'></input>
                 <label>Teléfono</label>
                 <input type='tel' className='form-control mt-3 mb-2' onChange={handleChange}
-                    name='phone' value={fields.phone} required></input>
+                    name='phone' value={fields.phone} required autoComplete='off'></input>
                 <label>Correo</label>
                 <input type='email' className='form-control mt-3 mb-2' onChange={handleChange}
-                    name='email' required value={fields.email}></input>
+                    name='email' required value={fields.email} autoComplete='off'></input>
                 <input type='hidden' name='prot' value={valid}></input>
                 <label>Contraseña</label>
                 <input type='password' className='form-control mt-3 mb-2' onChange={handleChange}

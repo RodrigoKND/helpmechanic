@@ -2,7 +2,7 @@ import '../../../fonts.css';
 export default function Privacidad() {
     return (
         <main className='container'>
-            <hr className='bg-primary' style={{ height: '10px' }}></hr>
+            <hr className='bg-primary' style={{ height: '10px', marginTop:'12vh' }}></hr>
             <h4>Términos y condiciones</h4>
             <b>Última actualización <pre>25/07/2023</pre></b>
             <div className='textContain'>
