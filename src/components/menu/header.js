@@ -9,8 +9,8 @@ function Menunav() {
         <header>
             <nav className='navbar'>
                 <div>
-                    <div className='container-fluid' 
-                    style={{ position: 'fixed', zIndex: '1000', top: '0', background:'yellow' }}>
+                    <div className='container-fluid bg-primary' 
+                    style={{ position: 'fixed', zIndex: '1000', top: '0'}}>
                         <button className='navbar-toggler mt-4 mb-4' type='button' data-bs-toggle='collapse'
                             data-bs-target='#navbarNav' aria-controls='navbarNav'
                             aria-expanded='false' aria-label='Toggle navigation'>
