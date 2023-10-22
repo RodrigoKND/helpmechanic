@@ -29,11 +29,12 @@ export default function Bordercontain() {
         })
             .then(resp => resp.json())
             .then(data => {
+                console.log(data)
                 if (data.eliminado) {
                     setRegister(true);
                 }
             })
-            .catch(err => console.error('Error'))
+            .catch(err => console.error(err))
     }
     return (
         <div className='mt-5 itemsHome'>
