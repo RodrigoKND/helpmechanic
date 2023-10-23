@@ -61,10 +61,10 @@ export default function Inputformusuario() {
             <label>Celular</label>
             <input type='tel' className='form-control mt-1 mb-2' name='phone'
                 placeholder='Número de contacto unico' onChange={handleChange}
-                value={fields.phone}></input>
+                value={fields.phone} autoComplete='off'></input>
             <label htmlFor='address'>Dirección</label>
             <input type='text' className='form-control mb-2' id='address' onChange={handleChange}
-                placeholder='Dirección de su taller' name='address'></input>
+                placeholder='Dirección de su taller' name='address' autoComplete='off'></input>
             <label>¿Cuenta con su propia movilidad?</label>
             <div className='text-center fs-5 mt-1 mb-3'>
                 <input type='radio' name='check' onChange={handleChange} value='yes'></input>
