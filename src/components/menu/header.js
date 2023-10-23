@@ -4,18 +4,23 @@ import '../../fonts.css';
 import './header.css';
 import { useEffect, useState } from 'react';
 
-function Menunav() {
-    const [notregistered, setnotregistered] = useState(false);
+export default function Menunav() {
+    const [register, setRegister] = useState(false);
     useEffect(() => {
-        fetch('https://hm-server-provider.onrender.com/Listamecanicos', {
+        fetch('https://hm-server-provider.onrender.com/direccionTaller', {
             method: 'GET',
             cache: 'no-store',
             credentials: 'include'
-        }).then(data => {
-            console.log(data)
-            return data.ok ? setnotregistered(true) : setnotregistered(false)
-        }).catch(err => setnotregistered(false))
-    },[])
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                if (data.errorToken) {
+                    setRegister(false);
+                }else setRegister(true);
+            }).catch(() => console.error('Error'))
+
+    }, []);
     return (
         <header>
             <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
@@ -46,7 +51,7 @@ function Menunav() {
                                     </Link>
                                 </li>
                                 {
-                                    notregistered ?
+                                    register ?
                                         <div className='mt-3' style={{ marginLeft: '65%' }}>
                                             <button className='btn text-white bg-danger' type='submit' >
                                                 Cerrar session
@@ -63,5 +68,3 @@ function Menunav() {
 
     );
 }
-
-export default Menunav
