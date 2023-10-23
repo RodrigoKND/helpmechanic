@@ -9,12 +9,13 @@ function Menunav() {
     useEffect(() => {
         fetch('https://hm-server-provider.onrender.com/Listamecanicos', {
             method: 'GET',
-            credentials: 'include',
-            cache:'no-store'
-        }).then(data=>{
-            return data.ok ? setnotregistered(true): setnotregistered(false)
-        }).catch(err=> setnotregistered(false))
-    })
+            cache: 'no-store',
+            credentials: 'include'
+        }).then(data => {
+            console.log(data)
+            return data.ok ? setnotregistered(true) : setnotregistered(false)
+        }).catch(err => setnotregistered(false))
+    },[])
     return (
         <header>
             <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
@@ -45,13 +46,13 @@ function Menunav() {
                                     </Link>
                                 </li>
                                 {
-                                    notregistered ? 
-                                <div className='mt-3' style={{ marginLeft: '65%'}}>
-                                    <button className='btn text-white bg-danger' type='submit' >
-                                        Cerrar session
-                                    </button>
-                                </div>:
-                                " "
+                                    notregistered ?
+                                        <div className='mt-3' style={{ marginLeft: '65%' }}>
+                                            <button className='btn text-white bg-danger' type='submit' >
+                                                Cerrar session
+                                            </button>
+                                        </div> :
+                                        " "
                                 }
                             </ul>
                         </div>
