@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 export default function Menunav() {
     const [register, setRegister] = useState(false);
     useEffect(() => {
-        fetch('https://hm-server-provider.onrender.com/direccionTaller', {
+        fetch('https://hm-server-provider.onrender.com/Listamecanicos', {
             method: 'GET',
             cache: 'no-store',
             credentials: 'include'
