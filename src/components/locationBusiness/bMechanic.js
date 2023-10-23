@@ -54,7 +54,7 @@ export default function Mechanictaller() {
             .then(data => {
                 console.log(data)
                 if (data.ok) {
-                    window.location.href = '/Listamecanicos'
+                    window.location.href = '/#/Listamecanicos'
                 }
                 setMessage(data.message)
             }).catch(err => {
@@ -68,13 +68,13 @@ export default function Mechanictaller() {
         <>
             {register
                 ?
-                <h4 className='text-center text-danger'>
+                <h4 className='text-center text-danger' style={{marginTop:'15vh'}}>
                     Debe registrarse antes de continuar en el formulario de mecánico
                 </h4>
                 :
                 <form onSubmit={submitLocation}>
                     <div className='d-flex justify-content-center'>
-                        <div className='border p-3 card' style={{ width: '30rem' }}>
+                        <div className='border p-3 card' style={{ width: '30rem', marginTop:'15vh' }}>
                             <h5 className='text-center' style={{ textDecoration: 'underline blue' }}>
                                 Detalles especificos
                             </h5>
@@ -89,20 +89,20 @@ export default function Mechanictaller() {
                             </label>
                             <input className='form-control' type='tel' onChange={handleChange}
                                 placeholder='Verificar contacto' id='phoneM' name='phone'
-                                required value={coord.phone}></input>
+                                required value={coord.phone} autoComplete='off'></input>
 
                             <label className='mt-3 ms-4' htmlFor='email'><h6>Correo</h6></label>
                             <input className='form-control' type='email' id='email' onChange={handleChange}
-                                autoComplete='username' name='email' value={coord.email} required></input>
+                                autoComplete='off' name='email' value={coord.email} required></input>
 
                             <label className='mt-3 ms-4' htmlFor='password'><h6>Contraseña</h6></label>
                             <input className='form-control mb-3' type='password' id='password' onChange={handleChange}
-                                autoComplete='current-password' name='passwd' value={coord.passwd} required></input>
+                                autoComplete='off' name='passwd' value={coord.passwd} required></input>
 
-                            <input className='form-control' type='number' name='latitude'
+                            <input className='form-control' type='number' name='latitude' autoComplete='off'
                                 placeholder='latitud' onChange={handleChange} value={coord.latitude} required></input>
 
-                            <input className='form-control mt-4' type='number' name='longitude'
+                            <input className='form-control mt-4' type='number' name='longitude' autoComplete='off'
                                 placeholder='longitud' onChange={handleChange} value={coord.longitude} required></input>
                             <div className='text-center mt-3'>
                                 <span>
