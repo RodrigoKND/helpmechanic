@@ -5,22 +5,6 @@ import './header.css';
 import { useEffect, useState } from 'react';
 
 export default function Menunav() {
-    const [register, setRegister] = useState(false);
-    useEffect(() => {
-        fetch('https://hm-server-provider.onrender.com/Listamecanicos', {
-            method: 'GET',
-            cache: 'no-store',
-            credentials: 'include'
-        })
-            .then(resp => resp.json())
-            .then(data => {
-                console.log(data)
-                if (data.errorToken) {
-                    setRegister(false);
-                }else setRegister(true);
-            }).catch(() => console.error('Error'))
-
-    }, []);
     return (
         <header>
             <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
@@ -50,15 +34,6 @@ export default function Menunav() {
                                         Calidad
                                     </Link>
                                 </li>
-                                {
-                                    register ?
-                                        <div className='mt-3' style={{ marginLeft: '65%' }}>
-                                            <button className='btn text-white bg-danger' type='submit' >
-                                                Cerrar session
-                                            </button>
-                                        </div> :
-                                        " "
-                                }
                             </ul>
                         </div>
                     </div>

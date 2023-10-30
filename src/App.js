@@ -6,7 +6,6 @@ import 'bootstrap/dist/js/bootstrap.js'
 import Menunav from './components/menu/header';
 import Maincontain from './components/contain/mainContain';
 import Login from './components/login/login';
-import Usuarioregistro from './components/login/usernew/loginUsuario';
 import Mecanicoregistro from './components/login/mecanico/loginMecanico';
 import Nosotros from './components/componentsMenu/nosotros/nosotros';
 import Privacidad from './components/componentsMenu/privacidad/privacidad';
@@ -29,7 +28,6 @@ function App() {
         <Route path='/nosotros' element={<Nosotros />} />
         <Route path='/privacidad' element={<Privacidad />} />
         <Route path='/calidad' element={<Calidad />} />
-        <Route path='/usuario' element={<Usuarioregistro />} />
         <Route path='/mecanico' element={<Mecanicoregistro />} />
         <Route path='/Listamecanicos' element={<Listamecanicos />}></Route>
         <Route path='/map' element={<Mylocation />}></Route>

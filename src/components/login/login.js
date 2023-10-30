@@ -1,20 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Loguserold from './userOld/logUserOld';
-import Usuarioregistro from './usernew/loginUsuario';
 import './login.css'
 import '../../fonts.css'
+import Loguser from './userOld/logUserOld';
 
 export default function Login() {
-    const [link, setLink] = useState(true)
-    const linkRef = useRef()
-    const handleFocus = () => {
-        setLink(false)
-    }
-    useEffect(() => {
-        if (link === false) linkRef.current.style.display = 'none'
-    }, [link])
-
     return (
         <>
             <div className='title fs-3 mb-4 text-center' style={{marginTop:'15vh'}}>FormHelpmechanic</div>
@@ -26,11 +15,8 @@ export default function Login() {
                             style={{ width: 'max-content', borderRadius: '15px' }}>
                             <b>Ir a formulario de mecánico</b>
                         </Link>
+                        <Loguser/>
                     </div>
-                    {link ? <Loguserold /> : <Usuarioregistro />}
-                    <Link to={'/usuario'} onFocus={handleFocus} ref={linkRef}>
-                        Crear cuenta como usuario
-                    </Link>
                 </div>
             </div>
         </>
