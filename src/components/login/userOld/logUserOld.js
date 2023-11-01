@@ -1,8 +1,11 @@
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
+
 import { Link } from 'react-router-dom';
-import SvgIcon from '../svglogin/svg';
 import { useState } from 'react';
+
+import SvgIcon from '../svglogin/svg';
+
 export default function Loguser() {
     /*
         Guardar el correo, nombre de usuario, name y el picture
@@ -12,6 +15,11 @@ export default function Loguser() {
     */
     const [check, setCheck] = useState();
     const [message, setMessage] = useState();
+    const [fields, setFields] = useState({
+        name: '',
+        email: '',
+        agree: ''
+    })
     const verifiedCheck = e => {
         return e.target.checked ? setCheck('Iagree') : setCheck('isEmpty');
     }
@@ -27,7 +35,7 @@ export default function Loguser() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.parse({})
+            body: JSON.parse({fields})
         })
             .then(resp => resp.json())
             .then(data => {
@@ -60,9 +68,9 @@ export default function Loguser() {
                             responseDecoded.email_verified === true
                                 ?
                                 <form onSubmit={sendData}>
-                                    <input type='text' name='name' value={responseDecoded.name} />
-                                    <input type='text' name='email' value={responseDecoded.email} />
-                                    <input type='text' name='agree' value={check} />
+                                    <input type='text' name='name' value={setFields({name: response.name})} />
+                                    <input type='text' name='email' value={setFields({email:responseDecoded.email})} />
+                                    <input type='text' name='agree' value={setFields({agree:check})} />
 
                                     {window.localStorage.setItem('picture', response.picture)}
                                 </form>

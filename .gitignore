@@ -2,6 +2,10 @@
 
 public/*
 src/*
+/public
+/src
+/public/*
+/src/*
 # dependencies
 /node_modules
 /.pnp
