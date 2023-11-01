@@ -65,14 +65,14 @@ export default function Loguser() {
                     <GoogleLogin
                         onSuccess={response => {
                             const responseDecoded = decodeResponse(response.credential);
-                            responseDecoded.email_verified === true
+                            responseDecoded.email_verified
                                 ?
                                 <form onSubmit={sendData}>
-                                    <input type='text' name='name' value={setFields({name: response.name})} />
+                                    <input type='text' name='name' value={setFields({name: responseDecoded.name})} />
                                     <input type='text' name='email' value={setFields({email:responseDecoded.email})} />
                                     <input type='text' name='agree' value={setFields({agree:check})} />
 
-                                    {window.localStorage.setItem('picture', response.picture)}
+                                    {window.localStorage.setItem('picture', responseDecoded.picture)}
                                 </form>
 
                                 :
