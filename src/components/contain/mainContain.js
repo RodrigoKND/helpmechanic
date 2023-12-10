@@ -68,7 +68,7 @@ export default function Maincontain() {
                                 Proporcionamos información acerca de mecánicos especializados
                                 con una amplia experiencia en su área.
                                 Toda esa información con tan solo registrarse de manera gratuita y poder
-                                olvidarse de los problemas con su vehiculo/motocicleta, etc.
+                                olvidarse de los problemas con su vehiculo/motocicleta.
                             </p>
                         </div>
                     </div>
