@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import '../../App.css';
 import '../../fonts.css';
 import './header.css';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { AuthUser } from '../context/context-registerUser/accessUser';
 
 export default function Menunav() {
+    const { getImage } = useContext(AuthUser);
     return (
         <header>
             <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
@@ -24,7 +26,13 @@ export default function Menunav() {
                                     </Link>
                                 </li>
                                 <li className='nav-item me-3 mt-2'>
-                                    <Link className='nav-link active text-white p-2 border border-white' aria-current='page'
+                                    <Link className='nav-link active text-white p-2' aria-current='page'
+                                        to='/bloghelpmechanic'>
+                                        Blog
+                                    </Link>
+                                </li>
+                                <li className='nav-item me-3 mt-2'>
+                                    <Link className='nav-link active text-white p-2' aria-current='page'
                                         to='/nosotros'>
                                         Nosotros
                                     </Link>
@@ -34,6 +42,14 @@ export default function Menunav() {
                                         Calidad
                                     </Link>
                                 </li>
+                                {
+                                    getImage ?
+                                        <div className='d-flex justify-content-end mt-2'>
+                                            <img className='border border-white'
+                                                src={getImage} alt='Welcome'
+                                                style={{ height: '50px', borderRadius: '40px' }} />
+                                        </div> : null
+                                }
                             </ul>
                         </div>
                     </div>

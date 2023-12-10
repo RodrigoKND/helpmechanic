@@ -1,12 +1,12 @@
 import '../../fonts.css';
 import '../../App.css'
+import { Link } from 'react-router-dom';
 export default function Notfound() {
     return (
-        <div style={{marginTop:'5%'}}>
-            <div className='d-flex justify-content-center'>
-                <img className='imgKey' src='/llave.png' alt='No se ha encontrado'/>
-            </div>
-            <h4 className='fs-4 mt-4 title text-center'>Not Found</h4>
+        <div className='text-center' style={{ marginTop: '23%' }}>
+            <h4 className='fs-4 title'>Not Found</h4>
+            <span>Ruta desconocida <label className='fs-3'>👨🏻‍🔧​​</label></span>
+            <div><Link to='/'>Ir a inicio</Link></div>
         </div>
     );
 }

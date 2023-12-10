@@ -1,12 +1,21 @@
-import { Link } from 'react-router-dom'
-import './login.css'
-import '../../fonts.css'
+import { Link, Navigate } from 'react-router-dom';
 import Loguser from './userOld/logUserOld';
+import { useContext } from 'react';
+import { AuthUser } from '../context/context-registerUser/accessUser';
+
+import './login.css';
+import '../../fonts.css';
 
 export default function Login() {
+    const {isAuth} = useContext(AuthUser);
+    if(isAuth){
+        return <Navigate to='/Listamecanicos'/>
+    }
     return (
         <>
-            <div className='title fs-3 mb-4 text-center' style={{marginTop:'15vh'}}>FormHelpmechanic</div>
+            <div className='title fs-3 mb-4 text-center' style={{marginTop:'15vh'}}>
+                FormHelpmechanic
+            </div>
             <div className='d-flex justify-content-center '>
                 <div className="bor" style={{ width: '30rem' }}>
                     <div className='mt-2'>

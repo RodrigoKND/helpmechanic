@@ -100,17 +100,18 @@ export default function Listamecanicos() {
                         </button>
                     </div>
                     <div className='col-9 row'>
-                        {message ? <h4 className='text-center text-danger'>{message}</h4> : null}
+                        {message ? <h4 className='text-center text-danger' style={{marginTop:'70px'}}>{message}</h4> : null}
                         {
                             combinedData.length === 0
                                 ?
                                 <>
-                                    <div className='d-flex justify-content-center mt-3 ms-4'>
+                                    <div className='d-flex justify-content-center mt-5 ms-4'>
                                         <img className='imgNotFound' src='/llave.png' alt='No se encontraron mecánicos cerca'></img>
                                     </div>
                                     <h4 className='text-center ms-4 text-secondary'>
                                         No se encontraron mecánicos, cerca de su ubicación...
-                                        <p className='mt-4 text-primary'>Estamos trabajando en ello.</p>
+                                        <p className='mt-4 text-primary'>Estamos trabajando en ello. 💪</p>
+                                        <Link to='/' className='text-secondary'>Regresar</Link>
                                     </h4>
                                 </>
                                 : null
