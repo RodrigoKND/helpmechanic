@@ -1,12 +1,17 @@
 import './listamecanicos.css'
 
-export default function Cardlist({ name, urlWorkshop, address, hasCar, phone, country, state, yearExperience, children }) {
+export default function Cardlist({ 
+    name, urlWorkshop, address, 
+    hasCar, phone, country, 
+    state, startday,
+    endday,starttime,endtime,
+    yearExperience, children }) {
     return (
         <div className='card border border-0' data-experience={yearExperience}
-            style={{ height: '20%', width: '20rem', maxWidth: '30rem', maxHeight: '20%' }}>
+            style={{ height: '20%', width: '20rem', maxWidth: '30rem', maxHeight: '20%', marginTop: '90px' }}>
             <img src={urlWorkshop} alt='taller' className='card-img-top sizeIMG' />
             <div className='card-body border'>
-                <b title='propietario'>Prop: </b><label>{name}</label>
+                <b title='propietario'>Jefe: </b><label>{name}</label>
                 <div>
                     <b>Dirección: </b>
                     {address}
@@ -32,6 +37,13 @@ export default function Cardlist({ name, urlWorkshop, address, hasCar, phone, co
                             hasCar === 'yes' ? <span className='text-primary'>Si</span> :
                                 hasCar === 'no' ? <span className='text-danger'>No</span> : null
                         }
+                    </div>
+                    <div>
+                        <b>Dias laborales: </b>
+                        <label>{startday} a {endday}</label>
+                        <div>
+                            <b>Horas laborales: {starttime} a {endtime}</b>
+                        </div>
                     </div>
                     <div className='text-success text-center'>
                         <b>Experiencia: </b>

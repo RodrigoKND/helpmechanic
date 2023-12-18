@@ -19,6 +19,7 @@ import Notfound from './components/errors/404';
 
 import ContextUser from './components/context/context-registerUser/accessUser';
 import Homeblog from './components/blog/homeblog/homeblog';
+import Blogstruct from './components/blog/structblog/blogstruct';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/bloghelpmechanic' element={<Homeblog />}></Route>
+          <Route path='/bloghelpmechanic/:title' element={<Blogstruct />}></Route>
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/privacidad' element={<Privacidad />} />
           <Route path='/calidad' element={<Calidad />} />

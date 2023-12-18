@@ -11,14 +11,16 @@ export default function Listamecanicos() {
     const [locationUser, setCoordUser] = useState('');
     const [register, setregister] = useState(false);
     useEffect(() => {
-        fetch('https://hm-server-provider.onrender.com/Listamecanicos', {
+        // const urlListmechanicProduction = 'https://hm-server-provider.onrender.com/Listamecanicos'
+        const urlListmechanicDev = 'http://localhost:3001/Listamecanicos';
+        fetch(urlListmechanicDev, {
             method: 'GET',
             cache: 'no-store',
             credentials: 'include'
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+                // console.log('esta es la data que llega', data)
                 if (data.errorToken) {
                     setregister(true);
                     setMessage('Debe registrarse antes de continuar...')
@@ -30,6 +32,7 @@ export default function Listamecanicos() {
                 }
             })
             .catch(err => {
+                // console.log("error", err)
                 setMessage('No se pudo obtener la lista de los mecánicos...Intentelo nuevamente.')
             })
     }, []);
@@ -77,7 +80,7 @@ export default function Listamecanicos() {
                 setCoordUser(data.state);
             })
             .catch(() => {
-                setMessage('Existió un error al obtener su ubicación.');
+                setMessage('');
             })
     };
 
@@ -95,12 +98,12 @@ export default function Listamecanicos() {
                 <div className='row p-4'>
                     <div className='col-3 container'
                         style={{ display: 'flex', flexDirection: 'column', width: 'max-content' }}>
-                        <button type='button' className="btn btn-success" onClick={coordUser} >
+                        <button type='button' className="btn btn-success" onClick={coordUser} style={{ marginTop: '10vh' }}>
                             Ver lista de mecánicos
                         </button>
                     </div>
                     <div className='col-9 row'>
-                        {message ? <h4 className='text-center text-danger' style={{marginTop:'70px'}}>{message}</h4> : null}
+                        {message ? <h4 className='text-center text-danger' style={{ marginTop: '70px' }}>{message}</h4> : null}
                         {
                             combinedData.length === 0
                                 ?
@@ -118,7 +121,7 @@ export default function Listamecanicos() {
                         }
                         {combinedData.map((value) => {
                             if (value.state === locationUser) {
-                               return <Cardlist
+                                return <Cardlist
                                     key={value.idInfo}
                                     name={value.name}
                                     urlWorkshop={value.urlWorkshop}
@@ -127,6 +130,10 @@ export default function Listamecanicos() {
                                     phone={value.phone}
                                     country={value.country}
                                     state={value.state}
+                                    startday={value.startday}
+                                    endday={value.endday}
+                                    starttime={value.starttime}
+                                    endtime={value.endtime}
                                     yearExperience={value.yearExperience}
                                 >
                                     <Link to='/map' className='btn btn-primary' onClick={localLocation(value.latitude, value.longitude)}>
@@ -135,7 +142,7 @@ export default function Listamecanicos() {
                                     </Link>
                                 </Cardlist>
                             } else if (sessionStorage.getItem('latU') && sessionStorage.getItem('longU')) {
-                               return <Cardlist
+                                return <Cardlist
                                     key={value.idMechanic}
                                     name={value.name}
                                     urlWorkshop={value.urlWorkshop}

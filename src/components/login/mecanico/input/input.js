@@ -9,7 +9,8 @@ export default function Inputformusuario() {
     const [valid, setValid] = useState('');
     const sendBtn = useRef();
     useEffect(() => {
-        const urlGET = 'https://hm-server-provider.onrender.com/mecanico';
+        // const urlProduction = 'https://hm-server-provider.onrender.com/mecanico'
+        const urlGET = 'http://localhost:3001/mecanico';
         fetch(urlGET, { method: 'GET', cache: 'no-store', })
             .then(resp => resp.json())
             .then(data => setValid(data.token))
@@ -31,8 +32,8 @@ export default function Inputformusuario() {
         formData.append('workshop', imgRef.current.files[0]);
         formData.append('token', valid);
         formData.append('terms', fields.terms);
-
-        fetch('https://hm-server-provider.onrender.com/registerMechanic', {
+        // const urlProduction = 'https://hm-server-provider.onrender.com/registerMechanic'
+        fetch('http://localhost:3001/registerMechanic', {
             method: 'POST',
             body: formData,
             credentials: 'include'

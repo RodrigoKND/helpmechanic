@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 export default function Mechanictaller() {
     const [register, setRegister] = useState(false);
     useEffect(() => {
-        fetch('https://hm-server-provider.onrender.com/direccionTaller', {
+        // const locationGet = 'https://hm-server-provider.onrender.com/direccionTaller'
+        const locationGet = 'http://localhost:3001/direccionTaller'
+        fetch(locationGet, {
             method: 'GET',
             cache: 'no-store',
             credentials: 'include'
@@ -22,7 +24,10 @@ export default function Mechanictaller() {
     const [coord, setCoord] = useState({
         phone: '',
         email: '',
-        passwd: '',
+        startday: '',
+        endday: '',
+        starttime: '',
+        endtime: '',
         latitude: '',
         longitude: '',
     })
@@ -37,11 +42,15 @@ export default function Mechanictaller() {
     }
     const submitLocation = (evt) => {
         evt.preventDefault();
-        const urlLocation = 'https://hm-server-provider.onrender.com/moreInfoMechanic';
+        // const urlLocation = 'https://hm-server-provider.onrender.com/moreInfoMechanic';
+        const urlLocation = 'http://localhost:3001/moreInfoMechanic';
         const formData = new FormData();
         formData.append('phone', coord.phone);
         formData.append('email', coord.email);
-        formData.append('passwd', coord.passwd);
+        formData.append('startday', coord.startday);
+        formData.append('endday', coord.endday);
+        formData.append('starttime', coord.starttime);
+        formData.append('endtime', coord.endtime);
         formData.append('latitude', coord.latitude);
         formData.append('longitude', coord.longitude);
         formData.append('hexa', getLocal);
@@ -54,7 +63,7 @@ export default function Mechanictaller() {
             .then(data => {
                 console.log(data)
                 if (data.ok) {
-                    window.location.href = '/#/Listamecanicos'
+                    window.location.href = '/#/Listamecanicos';
                 }
                 setMessage(data.message)
             }).catch(err => {
@@ -68,13 +77,13 @@ export default function Mechanictaller() {
         <>
             {register
                 ?
-                <h4 className='text-center text-danger' style={{marginTop:'15vh'}}>
+                <h4 className='text-center text-danger' style={{ marginTop: '15vh' }}>
                     Debe registrarse antes de continuar en el formulario de mecánico
                 </h4>
                 :
                 <form onSubmit={submitLocation}>
                     <div className='d-flex justify-content-center'>
-                        <div className='border p-3 card' style={{ width: '30rem', marginTop:'15vh' }}>
+                        <div className='border p-3 card' style={{ width: '30rem', marginTop: '15vh' }}>
                             <h5 className='text-center' style={{ textDecoration: 'underline blue' }}>
                                 Detalles especificos
                             </h5>
@@ -95,16 +104,30 @@ export default function Mechanictaller() {
                             <input className='form-control' type='email' id='email' onChange={handleChange}
                                 autoComplete='off' name='email' value={coord.email} required></input>
 
-                            <label className='mt-3 ms-4' htmlFor='password'><h6>Contraseña</h6></label>
-                            <input className='form-control mb-3' type='password' id='password' onChange={handleChange}
-                                autoComplete='off' name='passwd' value={coord.passwd} required></input>
+                            <label className='mt-3 ms-4'><h6>Dias que dispone trabajar</h6></label>
+                            <div className='input-group'>
+                                <input className='form-control' type='text' name='startday' required
+                                    placeholder='ejemplo: Lunes' onChange={handleChange} value={coord.startday}></input>
+                                <span className='p-2'> <b>a</b> </span>
+                                <input className='form-control' type='text' name='endday' onChange={handleChange} required
+                                    placeholder='ejemplo: Sábado' value={coord.endday}></input>
+                            </div>
+                            <label className='mt-3 ms-4'><h6>Hora de trabajo</h6></label>
+                            <div className='input-group'>
+                                <input className='form-control' name='starttime' type='time' onChange={handleChange}
+                                    value={coord.starttime} required></input>
+                                <span className='p-2'> <b>a</b> </span>
+                                <input className='form-control' name='endtime' type='time' onChange={handleChange}
+                                    value={coord.endtime} required></input>
+                            </div>
 
-                            <input className='form-control' type='number' name='latitude' autoComplete='off'
-                                placeholder='latitud' onChange={handleChange} value={coord.latitude} required></input>
+                            <input className='form-control' type='text' name='latitude' autoComplete='off'
+                                placeholder='latitud' onChange={handleChange} value={coord.latitude} 
+                                required pattern="^-?\d+(\.\d+)?$"></input>
 
-                            <input className='form-control mt-4' type='number' name='longitude' autoComplete='off'
+                            <input className='form-control mt-4' type='text' name='longitude' autoComplete='off'
                                 placeholder='longitud' onChange={handleChange} value={coord.longitude} required></input>
-                            <div className='text-center mt-3'>
+                            <div className='text-center mt-3' pattern="^-?\d+(\.\d+)?$">
                                 <span>
                                     Si no conoce las coordenadas de su taller,
                                     puede buscar en_
