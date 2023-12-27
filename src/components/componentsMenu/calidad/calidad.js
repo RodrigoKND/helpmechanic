@@ -37,7 +37,7 @@ export default function Calidad() {
                     <p>
                         Calificamos a los mecánicos registrados según a la experiencia que
                         estos contienen y otros factores a determinar,como la satisfacción
-                        del usuario con la ayuda solictada,etc.
+                        del usuario con la ayuda solictada.
                     </p>
                 </div>
             </section>
@@ -59,7 +59,7 @@ export default function Calidad() {
             </section>
             <div className='d-flex justify-content-center'>
                 <label className='text-center bg-primary p-3 text-white'>
-                    Desde el tallaer hasta tu ubicación
+                    Desde el taller hasta tu ubicación
                 </label>
             </div>
             <section className='bg-primary d-flex justify-content-center text-white fs-4 mt-4'>

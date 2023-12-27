@@ -47,7 +47,7 @@ export default function Nosotros() {
             <Misionvision />
             <hr className='text-white bg-light' style={{ height: '40px' }}></hr>
             <footer className='text-center text-white'>
-                <label className='mb-4'>© HELPMECHANIC 2023</label>
+                <label className='mb-4'>© HELPMECHANIC 2024</label>
             </footer>
         </section>
     );
