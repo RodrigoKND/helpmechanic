@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.38991201.css",
-    "main.js": "/static/js/main.f790a1af.js",
+    "main.css": "/static/css/main.d9dde900.css",
+    "main.js": "/static/js/main.bbbab905.js",
     "static/js/787.525fe126.chunk.js": "/static/js/787.525fe126.chunk.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
     "index.html": "/index.html",
-    "main.38991201.css.map": "/static/css/main.38991201.css.map",
-    "main.f790a1af.js.map": "/static/js/main.f790a1af.js.map",
+    "main.d9dde900.css.map": "/static/css/main.d9dde900.css.map",
+    "main.bbbab905.js.map": "/static/js/main.bbbab905.js.map",
     "787.525fe126.chunk.js.map": "/static/js/787.525fe126.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38991201.css",
-    "static/js/main.f790a1af.js"
+    "static/css/main.d9dde900.css",
+    "static/js/main.bbbab905.js"
   ]
 }
