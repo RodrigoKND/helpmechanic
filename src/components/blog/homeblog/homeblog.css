@@ -1,0 +1,21 @@
+.img-newpost{
+    object-fit: cover;
+    width: 100%;
+    height: 180px;
+    border-top: 2px solid aqua;
+    mask-image: linear-gradient(to top, transparent, black);
+}
+
+.posts{
+    object-fit: cover;
+    height: 180px;
+    width: max-content;
+}
+
+.posts:hover{
+    transform: scale(1.2);
+}
+
+.card-title{
+    max-width: 300px;
+}

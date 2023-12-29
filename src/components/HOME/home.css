@@ -1,0 +1,56 @@
+.registration {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.registration__link {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.contain {
+    position: relative;
+    overflow: hidden;
+    filter: hue-rotate(700deg);
+}
+
+.contain::before {
+    content: '';
+    background: #161616;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.contain__image {
+    margin-top: 40px;
+    border-bottom: 10px solid blue;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .registration {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .registration__slogan {
+        font-size: large;
+    }
+
+    .contain__image {
+        height: 60vh;
+        width: 100vh;
+        object-fit: cover;
+        margin-top: 13vh;
+    }
+}

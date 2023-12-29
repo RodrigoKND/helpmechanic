@@ -1,0 +1,9 @@
+.card__img-size{
+    object-fit: cover;
+    max-height: 20ch;
+}
+
+.notFound__img{
+    height: 25vh;
+    width: 30vh;
+}
