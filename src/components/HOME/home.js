@@ -6,8 +6,11 @@ import RenderImages from '../renderImages/renderImages';
 
 import './home.css';
 import '../../fonts.css';
+import { useContext } from 'react';
+import { AuthUser } from '../context/context-registerUser/accessUser';
 
 export default function Maincontain() {
+    const { isAuth } = useContext(AuthUser);
     const latitudeUser = sessionStorage.getItem('latU');
     const longitudeUser = sessionStorage.getItem('longU');
     const latitudeBusiness = localStorage.getItem('lat');
@@ -20,15 +23,15 @@ export default function Maincontain() {
         localStorage.removeItem(latitudeBusiness);
         localStorage.removeItem(longitudeBusiness);
     }
-
     return (
         <>
             <div className='mt-5 registration'>
                 <div onContextMenu={evt => evt.preventDefault()}>
-                    <h4 className='text-white bg-info p-3 registration__slogan' style={{borderRadius:'10px'}}>
+                    <h4 className='text-white bg-info p-3 registration__slogan' style={{ borderRadius: '10px' }}>
                         Desde el taller hasta tu ubicación
                     </h4>
-                    <Link className='nav-link registration__link textContain text-center fs-4 bg-primary' to='/login'>
+                    <Link className='nav-link registration__link textContain text-center fs-4 bg-primary'
+                        to={!isAuth ? '/login' : '/Listamecanicos'}>
                         Registrarse
                     </Link>
                 </div>

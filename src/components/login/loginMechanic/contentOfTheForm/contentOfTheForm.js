@@ -5,8 +5,8 @@ export const formFields = {
     name: '',
     phone: '',
     address: '',
-    check: '',
-    selectOption: '',
+    hasCar: '',
+    experience: '',
     workshop: '',
     terms: '',
     token: ''
@@ -72,11 +72,11 @@ export default function ContentOfTheForm({ formFields, onFormChange, onTerms, te
             </div>
             <div className='text-center fs-5 mt-1 mb-3'>
                 <label className='me-4'>
-                    <input type='radio' name='check' onChange={onFormChange}
+                    <input type='radio' name='hasCar' onChange={onFormChange}
                         value='yes' /> Si
                 </label>
                 <label>
-                    <input type='radio' className='ms-4' name='check'
+                    <input type='radio' className='ms-4' name='hasCar'
                         onChange={onFormChange} value='no' /> No
                 </label>
             </div>
@@ -86,7 +86,7 @@ export default function ContentOfTheForm({ formFields, onFormChange, onTerms, te
                         Años de experiencia
                     </strong>
                     <select className='ms-4'
-                        onChange={onFormChange} name='selectOption'>
+                        onChange={onFormChange} name='experience'>
                         <option value='0'>Opciones...</option>
                         <option value='1'>1 - 3</option>
                         <option value='2'>4 - 6</option>

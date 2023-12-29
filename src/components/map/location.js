@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.js';
+
 import { initializeMap, getAddress, markerBusiness } from './mapIMG/mapIMG.js';
+import {fetchGet} from '../fetch/fetchGet/fetchGet';
 
 import './location.css';
 import 'leaflet/dist/leaflet.css';
@@ -11,17 +13,10 @@ export default function Mylocation() {
     const [register, setRegister] = useState(false);
 
     useEffect(() => {
-        const urlGET = 'https://hm-server-provider.onrender.com/map'
-        fetch(urlGET, {
-            method: 'GET',
-            cache: 'no-store',
-            credentials: 'include'
-        })
-        .then(resp => resp.json())
-        .then(data => {
-            if (data.errorToken) setRegister(true);
-        })
-        .catch(err => console.error('Error'))
+        fetchGet('map')
+            .then(data => {
+                if (data.errorToken) setRegister(true);
+            })
     }, []);
 
     const [messageLoaded, setMessage] = useState(false);

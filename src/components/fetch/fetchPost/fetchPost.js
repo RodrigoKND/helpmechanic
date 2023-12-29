@@ -1,8 +1,8 @@
 export const fetchPost = (routeServer, objectToSendToServer) => {
-    const modeDev = 'http://localhost:3001/' + routeServer;
-    // const modeProd = 'https://hm-server-provider.onrender.com/' + routeServer;
+    // const modeDev = 'http://localhost:3001/' + routeServer;
+    const modeProd = 'https://hm-server-provider.onrender.com/' + routeServer;
     return new Promise(async(resolve) => {
-        await fetch(modeDev, {
+        await fetch(modeProd, {
             method: 'POST',
             cache: 'no-store',
             headers: {

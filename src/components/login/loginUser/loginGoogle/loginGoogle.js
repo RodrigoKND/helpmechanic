@@ -45,8 +45,6 @@ export default function LoginGoogle({ checkValue }) {
                                     );
                                 }
                             })
-
-
                         } else {
                             toast('Cuenta no autenticada', { type: 'error' });
                             setErrorMessageComponent(

@@ -57,11 +57,12 @@ export default function MechanicList() {
     const fetchAdress = async () => {
         try {
             const allowLocation = await getLocation();
-            const urlLOCATION = `https://nominatim.openstreetmap.org/reverse?
-            format=json&lat=${allowLocation.lat}&lon=${allowLocation.long}`;
-            fetchGet(urlLOCATION).then(addr => {
-                if (addr.address.state) setCoordUser(addr.address.state)
-            })
+            const url = `https://nominatim.openstreetmap.org/reverse.php?lat=${allowLocation.lat}&lon=${allowLocation.long}&format=jsonv2`;
+            fetch(url, { method: 'GET' })
+                .then(resp => resp.json())
+                .then(addr => {
+                    if (addr.address.state) setCoordUser(addr.address.state)
+                })
         } catch (err) { setMessage(err); }
     };
 
@@ -97,10 +98,10 @@ export default function MechanicList() {
                                 ?
                                 <>
                                     <div className='d-flex justify-content-center mt-5 ms-4 notFound'>
-                                        <RenderImages 
-                                        classImg={'notFound__img'}
-                                        pathImage={'/llave.png'}
-                                        altImage={'No se encontraron mecánicos cerca'}>
+                                        <RenderImages
+                                            classImg={'notFound__img'}
+                                            pathImage={'/llave.png'}
+                                            altImage={'No se encontraron mecánicos cerca'}>
                                         </RenderImages>
                                     </div>
                                     <h4 className='text-center ms-4 text-secondary'>

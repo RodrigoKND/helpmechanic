@@ -63,7 +63,7 @@ export default function Calidad() {
                 </label>
             </div>
             <section className='bg-primary d-flex justify-content-center text-white fs-4 mt-4'>
-                <span className='p-4'> © HELPMECHANIC 2023 </span>
+                <span className='p-4'> © HELPMECHANIC 2024 </span>
             </section>
 
         </div>

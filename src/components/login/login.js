@@ -15,7 +15,7 @@ export default function Login() {
     return (
         <>
             <div className='title fs-3 mb-4 text-center' style={{ marginTop: '15vh' }}>
-                FormHelpmechanic
+                Bienvenido al form de usuario
             </div>
             <div className='d-flex justify-content-center'>
                 <div className="bor" style={{ width: '30rem' }}>

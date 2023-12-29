@@ -1,10 +1,11 @@
-export const fetchGet = (routeServer) => {
-    const modeDev = 'http://localhost:3001/' + routeServer;
-    // const modeProd = 'https://hm-server-provider.onrender.com/' + routeServer;
+export const fetchGet = routeServer => {
+    // const modeDev = 'http://localhost:3001/' + routeServer;
+    const modeProd = 'https://hm-server-provider.onrender.com/' + routeServer;
     return new Promise((resolve) => {
-        fetch(modeDev, {
+        fetch(modeProd, {
             method: 'GET',
-            cache: 'no-store'
+            cache: 'no-store',
+            credentials: 'include'
         })
             .then(resp => resp.json())
             .then(data => resolve(data))

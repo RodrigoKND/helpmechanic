@@ -1,5 +1,5 @@
 .post{
-    width: 500px;
+    width: auto;
     height: 300px;
     object-fit: cover;
 }
@@ -14,4 +14,22 @@
     margin: auto;
     width: 50%;
     background: #282C31;
+}
+
+@media (max-width:700px){
+    .post{
+        width: 280px;
+        height: 30vh;
+    }
+    .positionImg{
+        margin: none;
+        display: flex;
+        justify-content: center;
+    }
+    .positionText{
+        margin: none;
+        width: min-content;
+        background: #282C31;
+    }
+    
 }
