@@ -37,18 +37,18 @@
   <div id="app"></div>
   <script>
     const offlineSite = document.querySelector('.offline');
-    // app.js (o el archivo donde tengas este código)
-
     document.addEventListener('DOMContentLoaded', () => {
       const offlineSite = document.querySelector('.offline');
 
       function handleOnlineEvent() {
+        offlineSite.style.marginTop = '0';
         offlineSite.style.background = 'transparent';
         offlineSite.style.color = 'black';
         offlineSite.textContent = ' ';
       }
 
       function handleOfflineEvent() {
+        offlineSite.style.marginTop = '15vh';
         offlineSite.style.background = 'rgb(227, 130, 130)';
         offlineSite.style.color = 'white';
         offlineSite.style.padding = '20px';

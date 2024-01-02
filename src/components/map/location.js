@@ -4,21 +4,11 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.js';
 
 import { initializeMap, getAddress, markerBusiness } from './mapIMG/mapIMG.js';
-import {fetchGet} from '../fetch/fetchGet/fetchGet';
 
 import './location.css';
 import 'leaflet/dist/leaflet.css';
 
 export default function Mylocation() {
-    const [register, setRegister] = useState(false);
-
-    useEffect(() => {
-        fetchGet('map')
-            .then(data => {
-                if (data.errorToken) setRegister(true);
-            })
-    }, []);
-
     const [messageLoaded, setMessage] = useState(false);
     const [errorMessage, setErrormessage] = useState('');
     const getItem = () => {
@@ -68,15 +58,8 @@ export default function Mylocation() {
                     <h4 className='text-danger text-center'>{errorMessage}</h4>
                     : ''
             }
-            {
-                register
-                    ?
-                    <h4 className='text-center text-danger'>
-                        Debe registrarse antes de continuar...
-                    </h4>
-                    :
-                    <div id='map'></div>
-            }
+
+            <div id='map'></div>
         </>
     );
 

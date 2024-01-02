@@ -1,10 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'bootstrap/dist/js/bootstrap.js';
-import 'react-toastify/dist/ReactToastify.css';
-
 import Menunav from './components/menu/header';
 
 import Maincontain from './components/HOME/home';
@@ -22,7 +17,15 @@ import Notfound from './components/errorsSystem/404';
 import Homeblog from './components/blog/homeblog/homeblog';
 import Blogstruct from './components/blog/structblog/blogstruct';
 
+import ProtectedRoute from './components/protectedRoutes/protectedRoutes';
+import ProtectedRouteMechanic from './components/protectedRoutes/protectedRouteMechanic';
 import ContextUser from './components/context/context-registerUser/accessUser';
+import ContextMechanic from './components/context/context-registerUser/accessMechanic';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <ContextUser>
@@ -31,16 +34,36 @@ function App() {
         <Routes>
           <Route path='/' element={<Maincontain />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/bloghelpmechanic' element={<Homeblog />}></Route>
-          <Route path='/bloghelpmechanic/:title' element={<Blogstruct />}></Route>
+          <Route path='/bloghelpmechanic' element={<Homeblog />} />
+          <Route path='/bloghelpmechanic/:title' element={<Blogstruct />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/privacidad' element={<Privacidad />} />
           <Route path='/calidad' element={<Calidad />} />
-          <Route path='/mecanico' element={<Mecanicoregistro />} />
-          <Route path='/Listamecanicos' element={<MechanicList/>}></Route>
-          <Route path='/map' element={<Mylocation />}></Route>
-          <Route path='/mecanico/direccionTaller' element={<MechanicWorkshop />}></Route>
-          <Route path='*' element={<Notfound />}></Route>
+
+          <Route path='/mecanico' element={
+            <ContextMechanic>
+              <Mecanicoregistro />
+            </ContextMechanic>
+          } />
+
+          <Route element={<ProtectedRoute />}>
+            <Route path='/Listamecanicos' element={<MechanicList />} />
+            <Route path='/map' element={<Mylocation />} />
+          </Route>
+
+          <Route
+            path='/mecanico/*'
+            element={
+              <ContextMechanic>
+                  <ProtectedRouteMechanic />
+                  <Routes>
+                    <Route path='direccionTaller' element={<MechanicWorkshop />} />
+                  </Routes>
+              </ContextMechanic>
+            }
+          />
+
+          <Route path='*' element={<Notfound />} />
         </Routes>
       </Router>
     </ContextUser>

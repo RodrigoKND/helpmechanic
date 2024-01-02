@@ -31,11 +31,10 @@ export default function LoginGoogle({ checkValue }) {
                                 email: responseDecoded.email,
                                 agree: checkValue
                             }
-
                             const getData = fetchPost('newUser', propertiesToSend);
                             getData.then(data => {
                                 if (data.ok) {
-                                    localStorage.setItem('user', JSON.stringify(getData.user));
+                                    localStorage.setItem('user', getData.user);
                                     setisAuth(true);
                                     navigate('/Listamecanicos');
                                 } else if (data.message) {

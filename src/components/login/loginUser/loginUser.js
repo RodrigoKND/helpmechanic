@@ -7,7 +7,6 @@ import SvgIcon from '../svglogin/svg';
 import '../login.css'
 
 export default function LoginUser() {
-    // const [message, setMessage] = useState();
     const [check, setCheck] = useState();
     const verifiedCheck = e => {
         return e.target.checked ? setCheck('Iagree') : setCheck('isEmpty');

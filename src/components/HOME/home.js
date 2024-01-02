@@ -6,11 +6,8 @@ import RenderImages from '../renderImages/renderImages';
 
 import './home.css';
 import '../../fonts.css';
-import { useContext } from 'react';
-import { AuthUser } from '../context/context-registerUser/accessUser';
 
 export default function Maincontain() {
-    const { isAuth } = useContext(AuthUser);
     const latitudeUser = sessionStorage.getItem('latU');
     const longitudeUser = sessionStorage.getItem('longU');
     const latitudeBusiness = localStorage.getItem('lat');
@@ -30,8 +27,8 @@ export default function Maincontain() {
                     <h4 className='text-white bg-info p-3 registration__slogan' style={{ borderRadius: '10px' }}>
                         Desde el taller hasta tu ubicación
                     </h4>
-                    <Link className='nav-link registration__link textContain text-center fs-4 bg-primary'
-                        to={!isAuth ? '/login' : '/Listamecanicos'}>
+                    <Link className='nav-link registration__link textContain text-white p-2 text-center fs-4 bg-primary'
+                        to='/login'>
                         Registrarse
                     </Link>
                 </div>

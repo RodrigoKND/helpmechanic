@@ -1,4 +1,4 @@
-export const fetchGet = routeServer => {
+export const fetchGet = async (routeServer) => {
     // const modeDev = 'http://localhost:3001/' + routeServer;
     const modeProd = 'https://hm-server-provider.onrender.com/' + routeServer;
     return new Promise((resolve) => {

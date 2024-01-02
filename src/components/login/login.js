@@ -1,6 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
-
-
+import { Link, Navigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthUser } from '../context/context-registerUser/accessUser';
 
@@ -10,8 +8,7 @@ import LoginUser from './loginUser/loginUser';
 
 export default function Login() {
     const { isAuth } = useContext(AuthUser);
-    const navigate = useNavigate();
-    if (isAuth) navigate('/Listamecanicos');
+    if (isAuth) return <Navigate to='/Listamecanicos'></Navigate>
     return (
         <>
             <div className='title fs-3 mb-4 text-center' style={{ marginTop: '15vh' }}>

@@ -12,7 +12,7 @@ const initializeMap = (L, lat, long) => {
     }).addTo(map);
 
     L.marker([lat, long], { icon: iconUser }).addTo(map)
-    .bindPopup('<b>Su ubicación</b>').openPopup();
+    .bindPopup('<b>Tu ubicación</b>').openPopup();
     return { map, tileLayer };
 }
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import LogicOfTheContent from "./mechanicalFormLogic/logicOfTheContent";
+
 export default function LoginMechanic() {
     return (
         <div className="d-flex justify-content-center" style={{marginTop:'100px'}}>
