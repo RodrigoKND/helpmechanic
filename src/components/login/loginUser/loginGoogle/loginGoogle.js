@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import { AuthUser } from '../../../context/context-registerUser/accessUser';
 
@@ -10,7 +10,6 @@ import { fetchPost } from '../../../fetch/fetchPost/fetchPost';
 import { ToastContainer, toast } from 'react-toastify';
 
 export default function LoginGoogle({ checkValue }) {
-    const navigate = useNavigate();
     const { setisAuth } = useContext(AuthUser);
     const [errorMessageComponent, setErrorMessageComponent] = useState(null);
     const decodeResponse = (data) => {
@@ -36,7 +35,7 @@ export default function LoginGoogle({ checkValue }) {
                                 if (data.ok) {
                                     localStorage.setItem('user', getData.user);
                                     setisAuth(true);
-                                    navigate('/Listamecanicos');
+                                    <Navigate to='/Listamecanicos'></Navigate>
                                 } else if (data.message) {
                                     toast(data.message, { type: 'error' });
                                     setErrorMessageComponent(
