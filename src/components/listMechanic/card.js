@@ -40,7 +40,7 @@ export default function Cardlist(props) {
                     <div>
                         <b>Dias laborales: </b>
                         <label>{startday} a {endday}</label>
-                        <div><b>Horas laborales: </b> {starttime.substring(0,5)} a {endtime.substring(0,5)} </div>
+                        <div><b>Horas laborales: </b> {starttime?.substring(0,5)} a {endtime?.substring(0,5)} </div>
                     </div>
                     <div className='text-success text-center'>
                         <b>Experiencia: </b>

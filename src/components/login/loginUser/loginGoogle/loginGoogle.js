@@ -8,9 +8,15 @@ import { GoogleLogin } from '@react-oauth/google';
 
 import { fetchPost } from '../../../fetch/fetchPost/fetchPost';
 import { ToastContainer, toast } from 'react-toastify';
+import { useQuery } from '@tanstack/react-query';
+import { fetchGet } from '../../../fetch/fetchGet/fetchGet';
 
 export default function LoginGoogle({ checkValue }) {
     const { setisAuth } = useContext(AuthUser);
+    const query = useQuery({
+        queryKey: ['api'],
+        queryFn: () => fetchGet('api')
+    });
     const [errorMessageComponent, setErrorMessageComponent] = useState(null);
     const decodeResponse = (data) => {
         let tokens = data.split('.');
@@ -20,9 +26,9 @@ export default function LoginGoogle({ checkValue }) {
         <>
             {errorMessageComponent}
             <GoogleOAuthProvider
-                clientId='14303105359-73c365kj22pak6nvsnrnfmldq8tv7pkc.apps.googleusercontent.com'>
+                clientId={`${query.data?.api}`}>
                 <GoogleLogin
-                    onSuccess={(response) => {
+                    onSuccess={response => {
                         const responseDecoded = decodeResponse(response.credential);
                         if (responseDecoded.email_verified) {
                             const propertiesToSend = {
