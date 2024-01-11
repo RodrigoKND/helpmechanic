@@ -1,0 +1,33 @@
+.menu li {
+    font-size: 20px;
+}
+
+.hiddenMenu {
+    display: none;
+}
+
+@media (max-width: 995px) {
+    .hiddenMenu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .animateMenu {
+        animation: menu .3s linear;
+    }
+
+    @keyframes menu {
+        to {
+            transform: translateY(0);
+            display: none;
+        }
+
+        from {
+            transform: translateY(-10%);
+            display: block;
+        }
+    }
+}

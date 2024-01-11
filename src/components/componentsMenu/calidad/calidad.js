@@ -4,11 +4,11 @@ import '../../../fonts.css'
 export default function Calidad() {
     return (
         <div className='container' style={{ marginTop: '80px', lineHeight:'30px' }}>
-            <hr className='bg-primary' style={{ height: '10px' }}></hr>
-            <header>
+            <hr className='bg-primary' style={{ height: '10px' }}/>
+            <section style={{ background: 'none' }}>
                 <h3>Encuentra tu Mecánico de Confianza</h3>
-                <b>------ Servicio profesional de mecánicos cerca de ti</b>
-            </header>
+                <b>Servicio profesional de mecánicos cerca de ti</b>
+            </section>
             <section className='textContain mt-3' style={{ background: 'none' }}>
                 <h4>¿Cómo funciona?</h4>
                 <div>

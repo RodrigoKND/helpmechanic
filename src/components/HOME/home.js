@@ -27,7 +27,7 @@ export default function Maincontain() {
                     <h4 className='text-white bg-info p-3 registration__slogan' style={{ borderRadius: '10px' }}>
                         Desde el taller hasta tu ubicación
                     </h4>
-                    <Link className='nav-link registration__link textContain text-white p-2 text-center fs-4 bg-primary'
+                    <Link className='nav-link registration__link textContain text-white p-2 text-center fs-4 bg-success'
                         to='/login'>
                         Registrarse
                     </Link>

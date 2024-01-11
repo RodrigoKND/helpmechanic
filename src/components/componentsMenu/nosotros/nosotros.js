@@ -1,21 +1,18 @@
-import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react';
-
 import Misionvision from './mision-vision/ms.js';
 import Propositoempresa from './proposito/proposito.js';
 
-import './nosotros.css'
+import './nosotros.css';
 export default function Nosotros() {
-    const moveImage = event => event.preventDefault();
+    const moveImage = e => e.preventDefault();
     return (
         <section>
             <div className="imgTaller">
                 <img onDragStart={moveImage} src='/taller.jpeg' alt='taller mecánico'></img>
             </div>
             <div className='description text-white'>
-                <h1 className='fs-1'>Conoce más de nosotros</h1>
-                <p className='text-center fs-5 bg-primary'>
-                    Desde el taller hasta tu ubicación
+                <h3>Conoce más de nosotros</h3>
+                <p className='text-center fs-5 bg-primary p-2 mt-3'>
+                    Del taller hasta su ubicación
                 </p>
             </div>
             <Propositoempresa />
