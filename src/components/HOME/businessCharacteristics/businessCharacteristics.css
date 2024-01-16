@@ -1,3 +1,15 @@
-.card__title{
-    font-size: 20px;
+.card__title {
+    color: #007bff;
+    font-size: 24px;
+}
+
+.card__paragraph{
+    color:#666;
+    padding: 0 10px 5px 10px;
+}
+
+.card__image {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
 }

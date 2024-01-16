@@ -24,26 +24,27 @@ export default function Maincontain() {
         <>
             <div className='mt-5 registration'>
                 <div onContextMenu={evt => evt.preventDefault()}>
-                    <h4 className='text-white bg-info p-3 registration__slogan' style={{ borderRadius: '10px' }}>
+                    <h1 className='text-white registration__slogan text-center'>
                         Desde el taller hasta tu ubicación
-                    </h4>
-                    <Link className='nav-link registration__link textContain text-white p-2 text-center fs-4 bg-success'
-                        to='/login'>
-                        Registrarse
+                    </h1>
+                    <p className='registration__description text-center'>
+                        Ofrecemos soluciones para sus problemas mecánicos
+                    </p>
+                    <Link to='/login'
+                        className='nav-link registration__link textContain text-white p-2 text-center fs-4 bg-primary'>
+                        ¡Solicita un servicio!
                     </Link>
                 </div>
             </div>
             <div className='contain' onContextMenu={evt => evt.preventDefault()}>
                 <RenderImages classImg='contain__image' pathImage='/homeimage.jpg'
-                    altImage='modelo pagina principal mecanico'></RenderImages>
-                <div className='row cols-md-4 g-1 mt-4'>
-                    <BusinessCharacteristics></BusinessCharacteristics>
-                </div>
-                <WhyChooseUs></WhyChooseUs>
-                <hr style={{ color: 'white' }}></hr>
-                <div className='text-center text-white mb-4'>
+                    altImage='modelo pagina principal mecanico' />
+                <BusinessCharacteristics />
+                <WhyChooseUs />
+                <footer className='text-center mb-4'
+                    style={{ background: '#222', padding: '20px', color: '#fff' }}>
                     © HELPMECHANIC 2024
-                </div>
+                </footer>
             </div>
         </>
     );

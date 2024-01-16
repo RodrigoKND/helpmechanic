@@ -1,7 +1,7 @@
 export default function WhyChooseUs() {
     return (
-        <div className='text-light container' style={{ marginTop: '65px' }}>
-            <h4 className='title' style={{ fontSize: '40px' }}>¿Por qué escogernos?</h4>
+        <div className='container'>
+            <h4 className='title' style={{ fontSize: '40px' }}>¿Por que escogernos?</h4>
             <div className='row cols-md-4 g-5'>
                 <div className='col'>
                     <p className='textContain mt-2' style={{ lineHeight: '30px' }}>
