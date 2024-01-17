@@ -11,7 +11,7 @@
 /.pnp
 .pnp.js
 /package-lock.json
-
+postsExtra.txt
 # testing
 /coverage
 

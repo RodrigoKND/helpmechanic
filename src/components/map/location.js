@@ -14,11 +14,10 @@ export default function Mylocation() {
     const getItem = () => {
         const lati = localStorage.getItem('lat');
         const longi = localStorage.getItem('long');
-        if (!(lati && longi)) {
+        if (!(lati && longi))
             return;
-        } else {
+        else
             return { lati, longi };
-        }
     }
     useEffect(() => {
         getAddress()
@@ -49,7 +48,16 @@ export default function Mylocation() {
                         </h4>
 
                     ) :
-                    <h4 className='text-center'>Bienvenido</h4>
+                    <h4 className='text-center' style={{
+                        marginTop: '13vh'
+                    }}>
+                        Bienvenido
+                        <div className='mt-4'>
+                            <span className='bg-warning p-2'>
+                                A veces la dirección no es la correcta, debido a problemas tecnicos
+                            </span>
+                        </div>
+                    </h4>
             }
 
             {
@@ -59,7 +67,7 @@ export default function Mylocation() {
                     : ''
             }
 
-            <div id='map'></div>
+            <div id='map' className='mt-4'></div>
         </>
     );
 

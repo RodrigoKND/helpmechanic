@@ -52,18 +52,20 @@ export default function MechanicList() {
         localStorage.setItem('lat', lat);
         localStorage.setItem('long', long);
     }
+
     return (
         <main>
-            <div className='row p-4'>
-                <div className='col-2 mt-4'
-                    style={{ display: 'flex', flexDirection: 'column', width: 'max-content' }}>
-                    <button type='button' className="btn btn-success" onClick={fetchAdressUser} style={{ marginTop: '10vh' }}>
-                        Ver lista de mecánicos
-                    </button>
+            <div className='row'>
+                <div className='col-md-2'>
+                    <div className='d-flex justify-content-center'>
+                        <button type='button' className='btn btn-success' onClick={fetchAdressUser} style={{ marginTop: '10vh' }}>
+                            Ver lista de mecánicos
+                        </button>
+                    </div>
                 </div>
-                <div className='col-10 row'>
+                <div className='col-md-10 row'>
                     {queryMechanics.isLoading &&
-                        <h4 className='text-center text-success'>
+                        <h4 className='text-center text-success' style={{marginTop:'13vh'}}>
                             Cargando lista de mecánicos...
                         </h4>
                     }

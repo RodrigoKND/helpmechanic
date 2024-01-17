@@ -6,15 +6,17 @@ export default function Cardlist(props) {
         phone, country, state, startday,
         endday, starttime, endtime, yearExperience, children } = props;
     return (
-        <article className='card border border-0' data-experience={yearExperience}
-            style={{ height: '20%', width: '20rem', maxWidth: '30rem', maxHeight: '20%', marginTop: '50px' }}>
+        <article className='card border border-0 ms-5' data-experience={yearExperience}
+            style={{
+                height: '20%', width: '18rem', marginTop:'10vh'
+            }}>
             <RenderImages
                 classImg={'card-img-top card__img-size'}
                 pathImage={urlWorkshop}
                 altImage={'imagen del taller'}
             ></RenderImages>
             <div className='card-body border'>
-                <b title='propietario'>Jefe: </b><label>{name}</label>
+                <b title='propietario'>Jefe: </b><label className='text-capitalize'>{name}</label>
                 <div><b>Dirección: </b> {address} </div>
                 <hr />
                 <div className='text-center text-success' style={{ fontWeight: '500' }}>
@@ -33,14 +35,14 @@ export default function Cardlist(props) {
                     <div>
                         <b>Cuenta con movilidad: </b>
                         {
-                            hasCar === 'yes' ? <span className='text-primary'>Si</span> :
+                            hasCar === 'yes' ? <span className='text-success'>Si</span> :
                                 hasCar === 'no' ? <span className='text-danger'>No</span> : null
                         }
                     </div>
                     <div>
                         <b>Dias laborales: </b>
                         <label>{startday} a {endday}</label>
-                        <div><b>Horas laborales: </b> {starttime?.substring(0,5)} a {endtime?.substring(0,5)} </div>
+                        <div><b>Horas laborales: </b> {starttime?.substring(0, 5)} a {endtime?.substring(0, 5)} </div>
                     </div>
                     <div className='text-success text-center'>
                         <b>Experiencia: </b>
@@ -54,5 +56,7 @@ export default function Cardlist(props) {
                 <div className='d-flex justify-content-center mt-3'>{children}</div>
             </div>
         </article>
+
+
     );
 }
