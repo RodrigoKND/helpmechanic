@@ -8,7 +8,7 @@ import './blogstruct.css';
 function LoadingComponent() {
     return (
         <>
-            <h4 className='text-white text-center p-4' style={{ marginTop: '7vh' }}>
+            <h4 className='text-center p-4' style={{ marginTop: '7vh' }}>
                 Cargando contenido...
             </h4>
             <Link to='/' className='nav-link text-center fs-3 p-3 text-primary'>
