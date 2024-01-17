@@ -12,7 +12,9 @@ export default function Blogstruct() {
         queryKey: ['blog'],
         queryFn: () => fetchGet('blog')
     })
+    console.log('data: ', query.data)
     query.data?.map(elements => {
+        console.log(elements)
         const replaceTitle = elements.title
             .toLowerCase()
             .replace(/ /g, '-')
