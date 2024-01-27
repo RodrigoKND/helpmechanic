@@ -5,7 +5,7 @@ import './businessCharacteristics.css';
 export default function BusinessCharacteristics() {
     return (
         <section className='d-flex justify-content-center align-items-center'
-            style={{ flexWrap: 'wrap', padding: '50px 20px', background: 'none'}}>
+            style={{ flexWrap: 'wrap', padding: '50px 20px', background: 'none' }}>
             <Link className='nav-link card' style={{ width: '18rem' }} to='/calidad'>
                 <RenderImages
                     pathImage='/service.jpg'
@@ -29,11 +29,12 @@ export default function BusinessCharacteristics() {
                     Funcionamiento
                 </h3>
                 <p className='card__paragraph'>
-                    Decida al mejor mecánico que usted 
+                    Decida al mejor mecánico que usted
                     seleccione según su ubicación
                 </p>
             </Link>
-            <Link className='nav-link card' style={{ width: '18rem' }} to='/blogHelpMechanic'>
+            <Link className='nav-link card' style={{ width: '18rem' }} target='_blank'
+                to='https://helpblogmechanic.blogspot.com/'>
                 <RenderImages
                     pathImage='/information.jpg'
                     classImg='card__image'

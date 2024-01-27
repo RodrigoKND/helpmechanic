@@ -1,5 +1,7 @@
 .menu li {
     font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
 }
 
 .hiddenMenu {
