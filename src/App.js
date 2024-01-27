@@ -34,8 +34,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Maincontain />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/bloghelpmechanic' element={<Homeblog />} />
-          <Route path='/bloghelpmechanic/:title' element={<Blogstruct />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/privacidad' element={<Privacidad />} />
           <Route path='/calidad' element={<Calidad />} />

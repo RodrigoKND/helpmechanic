@@ -43,7 +43,7 @@ export default function Menunav() {
                         <li onClick={() => handleClick('Blog')} className={`me-3 mb-4 mt-2 p-2 ${activeLink === 'Blog' ? 'bg-success' : ''}`}>
                             <Link
                                 className='nav-link fs-4 text-white' aria-current='page'
-                                to='/blogHelpMechanic'>
+                                to='https://helpblogmechanic.blogspot.com/'>
                                 Blog
                             </Link>
                         </li>
