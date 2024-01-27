@@ -14,9 +14,6 @@ import Mylocation from './components/map/location';
 import MechanicWorkshop from './components/locationBusiness/mechanicalWorkShop';
 import Notfound from './components/errorsSystem/404';
 
-import Homeblog from './components/blog/homeblog/homeblog';
-import Blogstruct from './components/blog/structblog/blogstruct';
-
 import ProtectedRoute from './components/protectedRoutes/protectedRoutes';
 import ProtectedRouteMechanic from './components/protectedRoutes/protectedRouteMechanic';
 import ContextUser from './components/context/context-registerUser/accessUser';
@@ -55,7 +52,7 @@ function App() {
               <ContextMechanic>
                   <ProtectedRouteMechanic />
                   <Routes>
-                    <Route path='direccionTaller' element={<MechanicWorkshop />} />
+                    <Route path='/direccionTaller' element={<MechanicWorkshop />} />
                   </Routes>
               </ContextMechanic>
             }
