@@ -10,13 +10,14 @@
     content="Desde el taller hasta tu ubicación, helpmechanic te ayuda a ver una lista de profesionales en la mecánica que estan dispuestos a ayudarte con tu motorizado" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>helpmechanic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div class="offline"></div>
   <div id="app"></div>
-  <script async defer>
+  <script>
     const offlineSite = document.querySelector('.offline');
     document.addEventListener('DOMContentLoaded', () => {
       const offlineSite = document.querySelector('.offline');
