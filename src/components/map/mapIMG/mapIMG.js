@@ -20,12 +20,6 @@ const markerBusiness = (L, lat, long) => {
     return marker;
 }
 
-const optionsMap = {
-    enableHighAccuracy: true,
-    timeout: 100,
-    maximumAge: 0,
-}
-
 const getAddress = () => {
     return new Promise((res, rej) => {
         navigator.geolocation.getCurrentPosition((pos) => {
@@ -35,7 +29,7 @@ const getAddress = () => {
             });
         }, () => {
             rej('No se pudo obtener el mapa');
-        }, optionsMap)
+        }, {enableHighAccuracy:true})
     })
 }
 

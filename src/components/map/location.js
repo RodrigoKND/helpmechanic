@@ -53,7 +53,7 @@ export default function Mylocation() {
                     }}>
                         Bienvenido
                         <div className='mt-4'>
-                            <span className='bg-warning p-2'>
+                            <span className='bg-warning p-2' style={{fontSize:'medium'}}>
                                 A veces la dirección no es la correcta, debido a problemas tecnicos
                             </span>
                         </div>

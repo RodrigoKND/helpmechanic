@@ -58,14 +58,14 @@ export default function MechanicList() {
             <div className='row'>
                 <div className='col-md-2'>
                     <div className='d-flex justify-content-center'>
-                        <button type='button' className='btn btn-success' onClick={fetchAdressUser} style={{ marginTop: '10vh' }}>
+                        <button type='button' className='btn btn-success' onClick={fetchAdressUser} style={{ marginTop: '15vh' }} title='show_list'>
                             Ver lista de mecánicos
                         </button>
                     </div>
                 </div>
                 <div className='col-md-10 row'>
                     {queryMechanics.isLoading &&
-                        <h4 className='text-center text-success' style={{marginTop:'13vh'}}>
+                        <h4 className='text-center text-success' style={{marginTop:'15vh'}}>
                             Cargando lista de mecánicos...
                         </h4>
                     }
